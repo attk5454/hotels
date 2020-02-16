@@ -11,15 +11,17 @@ grant all privileges on hoteldb.* to 'hoteldb_admin'@'localhost' identified by '
 
 use hoteldb;
 
+drop table if exists hotels;
+
 create table hotels (
   id      integer not null unique auto_increment,
-  name    varchar(100) not null,
+  name    varchar(255) not null,
   price   integer not null,      /* 宿泊料 */
-  pref    varchar(20) not null,  /* 所在地情報のうち都道府県名の部分：例）埼玉県 */
-  city    varchar(20) not null,  /* 所在地情報のうち市区町村名の部分：例）新座市 */
-  address varchar(100) not null, /* 所在地情報のうち都道府県名と市区町村名を除いた部分：例）東北2-33-10 */
-  memo    text,                  /* 詳細情報 */
-	image   varchar(10) not null,  /* 画像ファイル名：画像ファイルはimgaeディレクトリ内に格納されている */
+  pref    varchar(10) not null,  /* 所在地情報のうち都道府県名の部分：例）埼玉県 */
+  city    varchar(15) not null,  /* 所在地情報のうち市区町村名の部分：例）新座市 */
+  address varchar(200) not null, /* 所在地情報のうち都道府県名と市区町村名を除いた部分：例）東北2-33-10 */
+  memo    varchar(100),                  /* 詳細情報 */
+  image   varchar(255) not null,  /* 画像ファイル名：画像ファイルはimgaeディレクトリ内に格納されている */
   Primary Key (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
