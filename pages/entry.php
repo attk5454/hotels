@@ -16,7 +16,7 @@
 		<article>
 			<p>ホテルの所在地を入力してください。所在地の一部でも構いません。</p>
 			<form action="list.php" method="get">
-				<input type="text" name="address" />
+				<input type="text" name="add" />
 				<input type="submit" value="検索" />
 			</form>
 		</article>
